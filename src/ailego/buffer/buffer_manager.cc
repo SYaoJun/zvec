@@ -307,9 +307,6 @@ class BufferManager::BufferPool {
 
 
   void try_release_context_locked(BufferContext *context) {
-    if (context->refs_context.load() != 0) {
-      return;
-    }
     std::lock_guard<std::mutex> lock(mutex_table_);
     if (context->refs_context.load() != 0) {
       return;
