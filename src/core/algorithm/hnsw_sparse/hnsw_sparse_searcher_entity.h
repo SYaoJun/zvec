@@ -24,7 +24,6 @@ class HnswSparseSearcherEntity : public HnswSparseEntity {
   using Pointer = std::shared_ptr<HnswSparseSearcherEntity>;
   using SegmentPointer = IndexStorage::Segment::Pointer;
 
- public:
   struct SegmentGroupParam {
     SegmentGroupParam(SegmentPointer neighbors_in,
                       SegmentPointer neighbors_meta_in,
@@ -105,7 +104,6 @@ class HnswSparseSearcherEntity : public HnswSparseEntity {
 
   virtual int cleanup(void) override;
 
- public:
   bool is_loaded() const {
     return loaded_;
   }

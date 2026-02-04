@@ -153,12 +153,10 @@ class HnswSparseStreamer : public IndexStreamer {
     return 0;
   }
 
- private:
   //! To share ctx across streamer/searcher, we need to update the context for
   //! current streamer/searcher
   int update_context(HnswSparseContext *ctx) const;
 
- private:
   enum State { STATE_INIT = 0, STATE_INITED = 1, STATE_OPENED = 2 };
   class Stats : public IndexStreamer::Stats {
    public:

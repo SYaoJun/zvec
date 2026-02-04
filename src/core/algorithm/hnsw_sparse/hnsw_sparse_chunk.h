@@ -34,7 +34,7 @@ using SparseChunk = IndexStorage::Segment;
 
 class SparseChunkBroker {
  public:
-  typedef std::shared_ptr<SparseChunkBroker> Pointer;
+  using Pointer = std::shared_ptr<SparseChunkBroker>;
 
   enum CHUNK_TYPE {
     CHUNK_TYPE_HEADER = 1,
@@ -127,7 +127,6 @@ class SparseChunkBroker {
            ailego::StringHelper::ToString(seq_id);
   }
 
- private:
   IndexStreamer::Stats &stats_;
   HnswSparseChunkMeta chunk_meta_{};
   size_t page_mask_{0UL};

@@ -24,7 +24,6 @@ class HnswSparseSearcher : public IndexSearcher {
  public:
   using ContextPointer = IndexSearcher::Context::Pointer;
 
- public:
   HnswSparseSearcher(void);
   virtual ~HnswSparseSearcher(void);
 
@@ -126,7 +125,6 @@ class HnswSparseSearcher : public IndexSearcher {
   //! current streamer/searcher
   int update_context(HnswSparseContext *ctx) const;
 
- private:
   enum State { STATE_INIT = 0, STATE_INITED = 1, STATE_LOADED = 2 };
 
   HnswSparseSearcherEntity entity_{};

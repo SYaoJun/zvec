@@ -25,9 +25,8 @@ namespace core {
 //! hnsw graph algorithm implement
 class HnswSparseAlgorithm {
  public:
-  typedef std::unique_ptr<HnswSparseAlgorithm> UPointer;
+  using UPointer = std::unique_ptr<HnswSparseAlgorithm>;
 
- public:
   //! Constructor
   explicit HnswSparseAlgorithm(HnswSparseEntity &entity);
 
@@ -105,11 +104,9 @@ class HnswSparseAlgorithm {
   //! expand neighbors until group nums are reached
   void expand_neighbors_by_group(TopkHeap &topk, HnswSparseContext *ctx) const;
 
- private:
   HnswSparseAlgorithm(const HnswSparseAlgorithm &) = delete;
   HnswSparseAlgorithm &operator=(const HnswSparseAlgorithm &) = delete;
 
- private:
   static constexpr uint32_t kLockCnt{1U << 8};
   static constexpr uint32_t kLockMask{kLockCnt - 1U};
 

@@ -124,7 +124,6 @@ class HnswSparseStreamerEntity : public HnswSparseEntity {
 
   virtual void update_ep_and_level(node_id_t ep, level_t level) override;
 
- public:
   //! Constructor
   HnswSparseStreamerEntity(IndexStreamer::Stats &stats);
 
@@ -495,13 +494,11 @@ class HnswSparseStreamerEntity : public HnswSparseEntity {
     return 0;
   }
 
- private:
   HnswSparseStreamerEntity(const HnswSparseStreamerEntity &) = delete;
   HnswSparseStreamerEntity &operator=(const HnswSparseStreamerEntity &) =
       delete;
   static constexpr uint64_t kUpperHashMemoryInflateRatio = 2.0f;
 
- private:
   IndexStreamer::Stats &stats_;
   HNSWSparseHeader header_{};
   std::mutex mutex_{};

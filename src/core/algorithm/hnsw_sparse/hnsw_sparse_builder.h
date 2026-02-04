@@ -69,7 +69,6 @@ class HnswSparseBuilder : public IndexBuilder {
   constexpr static uint32_t kDefaultLogIntervalSecs = 15U;
   constexpr static uint32_t kMaxNeighborCnt = 65535;
 
- private:
   enum BUILD_STATE {
     BUILD_STATE_INIT = 0,
     BUILD_STATE_INITED = 1,
